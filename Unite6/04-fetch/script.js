@@ -15,4 +15,5 @@
             })
             document.getElementById("user-rows").innerHTML = usersHtml
         })
+        .catch(error=>console.log("Veriler yüklenirken hata oluştu : ", error))
 }
