@@ -9,88 +9,13 @@
             padding: 0;
         }
 
-        .container {
-            display: grid;
-            grid-template-columns: 200px auto auto;
-            grid-template-rows: 50px auto auto;
-            grid-template-areas:  "header header header "
-                                      "menu content  content"
-        }
-
-
         .header {
-            padding: 5px;
             grid-area: header;
+            padding: 5px;
             background-color: #007BFF;
             text-align: center;
             color: white;
         }
-
-        .menu {
-            grid-area: menu;
-        }
-
-        .content {
-            grid-area: content;
-            /*background-color: #DC3545;*/
-        }
-
-
-        .card {
-            display: inline-block;
-            width: 150px;
-            background-color: #f1f1f1;
-            margin: 5px;
-            padding-bottom: 5px;
-            text-align: center;
-            border-radius: 10px;
-            transition: box-shadow 300ms;
-
-            text-decoration: none;
-            color: #3a3535;
-        }
-
-        .card:hover{
-            box-shadow: 0 0 4px #515151;
-        }
-
-        .card img {
-
-            background-color: #28A745;
-            width: 150px;
-            height: 150px;
-            border-top-left-radius: 10px; /*margin-bottom: 5px;*/
-            border-top-right-radius: 10px; /*margin-bottom: 5px;*/
-            margin-bottom: 5px;
-        }
-
-        .author {
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-        }
-
-        .menu-link{
-            display: block;
-            text-decoration: none;
-            height: 25px;
-            border: 1px solid gray;
-            border-radius: 10px;
-            margin: 5px;
-            padding: 10px;
-            text-align: center;
-            transition: box-shadow 300ms;
-            color: gray;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
-
-        .menu-link:hover{
-            background-color: #dddddd;
-            box-shadow: 0 0 2px #515151;
-
-        }
-
     </style>
 </head>
 <body>
@@ -100,13 +25,13 @@
         <h1>Kitap Listeleme Uygulaması</h1>
     </header>
     <nav class="menu">
-        <a class="menu-link" href="home.html">Ana Sayfa</a>
+        <a class="menu-link active" href="home.html">Ana Sayfa</a>
         <a class="menu-link" href="">Yeni Eklenenler</a>
         <a class="menu-link" href="">Edebiyat</a>
         <a class="menu-link" href="">Tarih</a>
     </nav>
     <section class="content">
-        <a href="calikusu.html" class="card">
+        <a href="calikusu.html" title="Detay İçin Tıklayın..." class="card">
             <img src="./img/calikusu.jpg" width="" alt="">
 
             <h3>Çalıkuşu</h3>
@@ -118,7 +43,7 @@
             </div>
 
         </a>
-        <a href="kucuk_aga.html" class="card">
+        <a href="kucuk_aga.html" title="Detay İçin Tıklayın..." class="card">
             <img src="./img/kucuk_aga.jpg" width="" alt="">
             <h3>Küçük Ağa</h3>
             <div>
@@ -130,74 +55,13 @@
 
         </a>
 
-        <a href="yaban.html" class="card">
+        <a href="yaban.html" title="Detay İçin Tıklayın..." class="card">
             <img src="./img/yaban.jpg" width="" alt="">
             <h3 class="book-title">Yaban</h3>
             <div class="author">Yakup Kadri Karaosmanoğlu</div>
             <div class="year">1932</div>
         </a>
 
-
-        <!--		<article class="book">
-                    <img src="./img/calikusu.jpg" width="100" alt="">
-                    <table>
-                        <tbody>
-                        <tr>
-                            <td>Kitap Adı</td>
-                            <td><b>Çalıkuşu</b></td>
-                        </tr>
-                        <tr>
-                            <td>Yazar</td>
-                            <td><b>Reşat Nuri Güntekin</b></td>
-                        </tr>
-                        <tr>
-                            <td>Yayım Yılı</td>
-                            <td><b>1922</b></td>
-                        </tr>
-                        </tbody>
-                    </table>
-                    <a href="calikusu.html">Detay...</a>
-                </article>
-                <article class="book">
-                    <img src="img/yaban.jpg" width="100" alt="">
-                    <table>
-                        <tbody>
-                        <tr>
-                            <td>Kitap Adı</td>
-                            <td><b>Yaban</b></td>
-                        </tr>
-                        <tr>
-                            <td>Yazar</td>
-                            <td><b>Yakup Kadri Karaosmanoğlu</b></td>
-                        </tr>
-                        <tr>
-                            <td>Yayım Yılı</td>
-                            <td><b>1932</b></td>
-                        </tr>
-                        </tbody>
-                    </table>
-                    <a href="yaban.html">Detay...</a>
-                </article>
-                <article class="book">
-                    <img src="./img/kucuk_aga.jpg" width="100" alt="">
-                    <table>
-                        <tbody>
-                        <tr>
-                            <td>Kitap Adı</td>
-                            <td><b>Küçük Ağa</b></td>
-                        </tr>
-                        <tr>
-                            <td>Yazar</td>
-                            <td><b>Tarık Buğra</b></td>
-                        </tr>
-                        <tr>
-                            <td>Yayım Yılı</td>
-                            <td><b>1963</b></td>
-                        </tr>
-                        </tbody>
-                    </table>
-                    <a href="kucuk_aga.html">Detay...</a>
-                </article>-->
     </section>
 </div>
 
