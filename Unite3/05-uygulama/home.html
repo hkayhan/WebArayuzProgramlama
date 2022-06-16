@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Kitap Listesi</title>
-    <style>
+	<meta charset="UTF-8">
+	<title>Kitap Listesi</title>
+	<style>
         * {
             margin: 0;
             padding: 0;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 200px auto auto;
+            grid-template-rows: 50px auto auto;
+            grid-template-areas:  "header header header "
+                                  "menu content  content"
         }
 
         .header {
@@ -23,10 +31,11 @@
 
         .menu-link {
             display: block;
+
             text-decoration: none;
-            height: 25px;
             border: 1px solid gray;
             border-radius: 10px;
+
             margin: 5px;
             padding: 10px;
             text-align: center;
@@ -42,97 +51,62 @@
 
         }
 
-        .active{
+        .active {
             background-color: #dddddd;
             color: #3a3535;
         }
+
 
         .content {
             grid-area: content;
         }
 
 
-        .card {
-            display: inline-block;
-            width: 150px;
-            background-color: #f1f1f1;
-            margin: 5px;
-            padding-bottom: 5px;
-            text-align: center;
-            border-radius: 10px;
-            transition: box-shadow 300ms;
-
-            text-decoration: none;
-            color: #3a3535;
-        }
-
-        .card:hover {
-            box-shadow: 0 0 4px #515151;
-        }
-
-        .card img {
-
-            background-color: #28A745;
-            width: 150px;
-            height: 150px;
-            border-top-left-radius: 10px; /*margin-bottom: 5px;*/
-            border-top-right-radius: 10px; /*margin-bottom: 5px;*/
-            margin-bottom: 5px;
-        }
-
-        .author {
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-        }
-
-    </style>
+	</style>
 </head>
 <body>
 
 <div class="container">
-    <header class="header">
-        <h1>Kitap Listeleme Uygulaması</h1>
-    </header>
-    <nav class="menu">
-        <a class="menu-link active" href="home.html">Ana Sayfa</a>
-        <a class="menu-link" href="">Yeni Eklenenler</a>
-        <a class="menu-link" href="">Edebiyat</a>
-        <a class="menu-link" href="">Tarih</a>
-    </nav>
-    <section class="content">
-        <a href="calikusu.html" title="Detay İçin Tıklayın..." class="card">
-            <img src="./img/calikusu.jpg" width="" alt="">
+	<header class="header">
+		<h1>Kitap Listeleme Uygulaması</h1>
+	</header>
+	<nav class="menu">
+		<a class="menu-link active" href="home.html">Ana Sayfa</a>
+		<a class="menu-link" href="">Yeni Eklenenler</a>
+		<a class="menu-link" href="">Edebiyat</a>
+		<a class="menu-link" href="">Tarih</a>
+	</nav>
+	<section class="content">
+		<a href="calikusu.html" title="Detay İçin Tıklayın..." class="card">
+			<img src="./img/calikusu.jpg" width="" alt="">
 
-            <h3>Çalıkuşu</h3>
-            <div>
-                Reşat Nuri Güntekin
-            </div>
-            <div>
-                1922
-            </div>
+			<h3>Çalıkuşu</h3>
+			<div>
+				Reşat Nuri Güntekin
+			</div>
+			<div>
+				1922
+			</div>
 
-        </a>
-        <a href="kucuk_aga.html" title="Detay İçin Tıklayın..." class="card">
-            <img src="./img/kucuk_aga.jpg" width="" alt="">
-            <h3>Küçük Ağa</h3>
-            <div>
-                Tarık Buğra
-            </div>
-            <div>
-                1963
-            </div>
+		</a> <a href="kucuk_aga.html" title="Detay İçin Tıklayın..." class="card">
+		<img src="./img/kucuk_aga.jpg" width="" alt="">
+		<h3>Küçük Ağa</h3>
+		<div>
+			Tarık Buğra
+		</div>
+		<div>
+			1963
+		</div>
 
-        </a>
+	</a>
 
-        <a href="yaban.html" title="Detay İçin Tıklayın..." class="card">
-            <img src="./img/yaban.jpg" width="" alt="">
-            <h3 class="book-title">Yaban</h3>
-            <div class="author">Yakup Kadri Karaosmanoğlu</div>
-            <div class="year">1932</div>
-        </a>
+		<a href="yaban.html" title="Detay İçin Tıklayın..." class="card"> <img src="./img/yaban.jpg" width="" alt="">
+			<h3 class="book-title">Yaban</h3>
+			<div class="author">Yakup Kadri Karaosmanoğlu</div>
+			<div class="year">1932</div>
+		</a>
 
-    </section>
+	</section>
 </div>
 
 </body>
