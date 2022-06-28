@@ -73,9 +73,11 @@
             border-radius: 10px;
             transition: box-shadow 300ms;
         }
+
         .card:hover {
             box-shadow: 0 0 4px #515151;
         }
+
         .card img {
             width: 150px;
             height: 150px;
@@ -83,6 +85,7 @@
             border-top-right-radius: 10px;
             margin-bottom: 5px;
         }
+
         .author {
             overflow: hidden;
             white-space: nowrap;
@@ -97,42 +100,34 @@
 		<h1>Kitap Listeleme Uygulaması</h1>
 	</header>
 	<nav class="menu">
-		<a class="menu-link active" href="home.html">Ana Sayfa</a>
-		<a class="menu-link" href="">Yeni Eklenenler</a>
-		<a class="menu-link" href="">Edebiyat</a>
-		<a class="menu-link" href="">Tarih</a>
+		<a class="menu-link active" href="home.html">Ana Sayfa</a> <a class="menu-link" href="">Yeni Eklenenler</a>
+		<a class="menu-link" href="">Edebiyat</a> <a class="menu-link" href="">Tarih</a>
 	</nav>
-	<section class="content">
-		<a href="calikusu.html" title="Detay İçin Tıklayın..." class="card">
-			<img src="./img/calikusu.jpg" width="" alt="">
-
-			<h3>Çalıkuşu</h3>
-			<div class="author">
-				Reşat Nuri Güntekin
-			</div>
-			<div>
-				1922
-			</div>
-
-		</a> <a href="kucuk_aga.html" title="Detay İçin Tıklayın..." class="card">
-		<img src="./img/kucuk_aga.jpg" width="" alt="">
-		<h3>Küçük Ağa</h3>
-		<div class="author">
-			Tarık Buğra
-		</div>
-		<div>
-			1963
-		</div>
-
-	</a>
-
-		<a href="yaban.html" title="Detay İçin Tıklayın..." class="card"> <img src="./img/yaban.jpg" width="" alt="">
-			<h3 class="book-title">Yaban</h3>
-			<div class="author">Yakup Kadri Karaosmanoğlu</div>
-			<div class="year">1932</div>
-		</a>
-
+	<section id="content" class="content">
 	</section>
+
+	<script>
+        (function () {
+            fetch('./data.json')
+            .then(data=>data.json())
+            .then(data=>{
+                let contentArea=``
+                data.forEach(d=>{
+                    let bookCard=`
+						<a href="${d.link}" title="Detay İçin Tıklayın..." class="card">
+							<img src="${d.image}" width="" alt="">
+							<h3>${d.bookName}</h3>
+							<div class="author">${d.author}</div>
+							<div>${d.year}</div>
+						</a>
+					`
+                    contentArea+=bookCard
+                })
+                document.getElementById("content").innerHTML=contentArea
+            })
+            .catch(error=>console.log("Veriler yüklenirken hata oluştu : ", error))
+        })()
+	</script>
 </div>
 
 </body>
